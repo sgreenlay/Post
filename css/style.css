@@ -1,0 +1,248 @@
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;  
+}
+
+body {
+	background-image: url('../img/norwegian_rose.png');
+	background-repeat: repeat;
+	font-family: 'Helvetica', sans-serif;
+}
+
+#container {
+	position: absolute;
+	width: 600px;
+	margin-left: -300px;
+	left: 50%;
+	height: 400px;
+	margin-top: -200px;
+	top: 50%;
+	-webkit-perspective: 800px;
+	-moz-perspective: 800px;
+	-ms-perspective: 800px;
+	-o-perspective: 800px;
+	perspective: 800px;
+	border-radius: 5px;
+	visibility: hidden;
+}
+
+#card {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-transition: -webkit-transform 1s;
+	-moz-transition: -moz-transform 1s;
+	-ms-transition: -ms-transform 1s;
+	-o-transition: -o-transform 1s;
+	transition: transform 1s;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+#card.flipped {
+	-webkit-transform: rotateY( 180deg );
+	-moz-transform: rotateY( 180deg );
+	-ms-transform: rotateY( 180deg );
+	-o-transform: rotateY( 180deg );
+	transform: rotateY( 180deg );
+}
+
+#card #flip {
+	position: absolute;
+	left: 100%;
+	width: 45px;
+	bottom: 10%;
+}
+
+#card #flip a {
+	text-align: right;
+	display: block;
+	background-color: #ffbf00;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	padding: 5px;
+	font-size: 26px;
+	color: #af0005;
+	text-decoration: none;
+	box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+	border-top: 4px #af0005 solid;
+	border-right: 4px #af0005 solid;
+	border-bottom: 4px #af0005 solid;
+	font-weight: bold;
+}
+
+#card #flip a:hover {
+	color: white;
+	border-top: 4px white solid;
+	border-right: 4px white solid;
+	border-bottom: 4px white solid;
+}
+
+
+#card section {
+	display: block;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	border-radius: 5px;
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	backface-visibility: hidden;
+	box-shadow: 0 0 25px 0 rgba(0,0,0,0.5);
+}
+
+#card #front {
+	background: white;
+}
+
+#card #front img {
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+}
+
+#card #back {
+	background: #eee;
+	-webkit-transform: rotateY( 180deg );
+	-moz-transform: rotateY( 180deg );
+	-ms-transform: rotateY( 180deg );
+	-o-transform: rotateY( 180deg );
+	transform: rotateY( 180deg );
+}
+
+#card #back #map-wrapper {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+	overflow: hidden;
+	z-index: 0;
+	-webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+}
+
+#card #back #map-wrapper #map {
+	position: absolute;
+	left: 0%;
+	width: 175%;
+	height: 150%;
+	opacity: 0.85;
+	box-shadow: inset 0 0 0 25px rgba(255,255,255,1.0);
+	border-radius: 5px;
+	z-index: 0;
+	-webkit-transform: translate3d(0,0,0);
+}
+
+#card #back #text {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	bottom: 0px;
+	right: 0px;
+	padding: 35px 165px 35px 35px;
+	font-size: 24px;
+	line-height: 36px;
+	vertical-align: middle;
+	font-family: 'Neucha', cursive;
+	border-radius: 5px;
+	background: -webkit-linear-gradient(top left, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.95) 50%, rgba(255,255,255,0.0) 100%);
+	background: -moz-linear-gradient(top left, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.95) 50%, rgba(255,255,255,0.0) 100%);
+	background: -ms-linear-gradient(top left, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.95) 50%, rgba(255,255,255,0.0) 100%);
+	background: -o-linear-gradient(top left, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.95) 50%, rgba(255,255,255,0.0) 100%);
+	background: linear-gradient(to bottom right, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.95) 50%, rgba(255,255,255,0.0) 100%);
+	z-index: 100;
+	-webkit-transform: translate3d(0,0,0);
+}
+
+#card #back #text * {
+	-webkit-user-select: text;
+	-moz-user-select: text;
+	-ms-user-select: text;
+	-o-user-select: text;
+	user-select: text;
+}
+
+#card #back #stamp {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	background: white;
+	width: 80px;
+	height: 80px;
+	z-index: 100;
+	-webkit-mask-image: url(../img/stamp.png);
+	-moz-mask-image: url(../img/stamp.png);
+	-ms-mask-image: url(../img/stamp.png);
+	-o-mask-image: url(../img/stamp.png);
+	mask-image: url(../img/stamp.png);
+	-webkit-transform: translate3d(0,0,0);
+}
+
+#card #back #stamp #shadow {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+#card #back #stamp #shadow::before {
+	display: block;
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	box-shadow: inset 0px 0px 1px 8px rgba(255,255,255,0.5);
+}
+
+#card #back #stamp #shadow img {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+
+#card #back #stamp-overlay {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 160px;
+	height: 80px;
+}
+
+#card #back #stamp-overlay img {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+#footer {
+	position: absolute;
+	left: 50%;
+	margin-left: -200px;
+	bottom: 0px;
+	height: 20px;
+	padding: 5px;
+	color: #666;
+	width: 400px;
+	text-align: center;
+	font-family: 'Neucha', cursive;
+	font-size: 18px;
+}
+
+#footer a {
+	color: #af0005;
+	text-decoration: none;
+}
+
+#footer a:hover {
+	color: white;
+}

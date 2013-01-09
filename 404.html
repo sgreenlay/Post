@@ -1,0 +1,54 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Post</title>
+	<link href='http://fonts.googleapis.com/css?family=Neucha' rel='stylesheet' type='text/css'>
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-26302251-1']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</head>
+<body>
+	<div id="container" style="visibility:visible">
+		<div id="card">
+			<div id="flip">
+				<a href="javascript:flipCard();">&#8592;</a>
+			</div>
+			<section id="front">
+				<img id="card-front-img" src="img/404.jpg" />
+			</section>
+			<section id="back">
+				<div id="text">
+					<p id="card-back-txt">
+						Oops,<br/>
+						Couldn't find the page you were looking for. Sorry about that!<br/>
+						- Scott
+					</p>
+				</div>
+				<div id="stamp">
+					<div id="shadow">
+						<img id="card-stamp" src="img/404_stamp.jpg" />
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+	<div id="footer">
+		built by <a href="http://greenlay.net">scott</a>@greenlay.net
+	</div>
+	<script src="js/libs/prototype.js" type="text/javascript"></script>
+	<script>
+		function flipCard() {
+			var card = document.getElementById('card');
+			card.toggleClassName('flipped');
+		}
+	</script>
+</body>
+</html>
